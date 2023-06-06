@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebSocket Test</title>
+        <script>
+            let socket;
+
+            function sendUncancelRequest() {
+                const countVar = document.getElementById('countVarInput').value; // Fetch value from input field
+
+                socket = new WebSocket('wss://s-euw1c-nss-2204.europe-west1.firebasedatabase.app/.ws?v=5&p=1:1089186343487:web:9bf7a94dbf0b88f018668a&ns=canceljohan-314af-default-rtdb');
+
+                socket.onopen = function (event) {
+                    const message = {
+                        "t": "d",
+                        "d": {
+                            "r": 12,
+                            "a": "p",
+                            "b": {
+                                "p": "/count",
+                                "d": {
+                                    "count": countVar
+                                }
+                            }
+                        }
+                    };
+                    socket.send(JSON.stringify(message)); // Send message as a string
+                };
+
+                socket.onmessage = function (event) {
+                    console.log('Message from server: ', event.data);
+                };
+
+                socket.onerror = function (error) {
+                    console.error('WebSocket Error: ', error);
+                };
+            }
+        </script>
+    </head>
+    <body>
+        <label for="countVarInput">Count Variable:</label>
+        <input type="number" id="countVarInput" value="0">
+        <button onclick="sendUncancelRequest()">Uncancel</button>
+    </body>
+</html>
