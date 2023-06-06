@@ -33,7 +33,7 @@ function sendUncancelRequest() {
 
 function playSound() {
     const sound = new Howl({
-        src: ['https://www.myinstants.com/media/sounds/goofy-ahh-sounds.mp3']
+        src: ['./goofy-ahh-sounds.mp3']
     });
 
     sound.play();
