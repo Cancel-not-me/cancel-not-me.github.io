@@ -1,7 +1,7 @@
 let socket;
 
 function sendUncancelRequest() {
-    const countVar = document.getElementById('countVarInput').value;
+    const countVar = parseInt(document.getElementById('countVarInput').value, 10);
 
     socket = new WebSocket('wss://s-euw1c-nss-2204.europe-west1.firebasedatabase.app/.ws?v=5&p=1:1089186343487:web:9bf7a94dbf0b88f018668a&ns=canceljohan-314af-default-rtdb');
 
