@@ -1,0 +1,41 @@
+body {
+    background-color: #FFC857;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+    text-align: center;
+}
+
+.container {
+    padding-top: 50px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+}
+
+h1 {
+    color: #5B5EA6;
+    margin: 50px 0;
+}
+
+.fun-input {
+    width: 200px;
+    height: 50px;
+    margin: 20px 0;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.fun-button {
+    background-color: #5B5EA6;
+    color: #FFC857;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.fun-button:hover {
+    background-color: #33425B;
+}
